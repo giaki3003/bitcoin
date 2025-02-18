@@ -2,6 +2,26 @@ Contents
 ========
 This directory contains tools for developers working on this repository.
 
+deterministic-fuzz-coverage
+===========================
+
+A tool to check for non-determinism in fuzz coverage. To get the help, run:
+
+```
+RUST_BACKTRACE=1 cargo run --manifest-path ./contrib/devtools/deterministic-fuzz-coverage/Cargo.toml -- --help
+```
+
+To execute the tool, compilation has to be done with the build options
+`-DCMAKE_C_COMPILER='clang' -DCMAKE_CXX_COMPILER='clang++'
+-DBUILD_FOR_FUZZING=ON -DCMAKE_CXX_FLAGS='-fPIC -fprofile-instr-generate
+-fcoverage-mapping'`. Both llvm-profdata and llvm-cov must be installed. Also,
+the qa-assets repository must have been cloned. Finally, a fuzz target has to
+be picked before running the tool:
+
+```
+RUST_BACKTRACE=1 cargo run --manifest-path ./contrib/devtools/deterministic-fuzz-coverage/Cargo.toml -- $PWD/build_dir $PWD/qa-assets/corpora-dir fuzz_target_name
+```
+
 clang-format-diff.py
 ===================
 
@@ -83,11 +103,21 @@ A small script to automatically create manpages in ../../doc/man by running the 
 This requires help2man which can be found at: https://www.gnu.org/software/help2man/
 
 With in-tree builds this tool can be run from any directory within the
-repostitory. To use this tool with out-of-tree builds set `BUILDDIR`. For
+repository. To use this tool with out-of-tree builds set `BUILDDIR`. For
 example:
 
 ```bash
 BUILDDIR=$PWD/build contrib/devtools/gen-manpages.py
+```
+
+headerssync-params.py
+=====================
+
+A script to generate optimal parameters for the headerssync module (src/headerssync.cpp). It takes no command-line
+options, as all its configuration is set at the top of the file. It runs many times faster inside PyPy. Invocation:
+
+```bash
+pypy3 contrib/devtools/headerssync-params.py
 ```
 
 gen-bitcoin-conf.sh
@@ -105,8 +135,8 @@ example:
 BUILDDIR=$PWD/build contrib/devtools/gen-bitcoin-conf.sh
 ```
 
-security-check.py and test-security-check.py
-============================================
+security-check.py
+=================
 
 Perform basic security checks on a series of executables.
 
