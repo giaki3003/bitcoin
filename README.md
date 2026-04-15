@@ -31,10 +31,10 @@ Config file name: ```drivechain-forknet.conf```
 
 
 # Forknet changes:
-- [ ] OP_DRIVECHAIN
-- [ ] OP_RETURN unlimited
-- [ ] Difficulty reset at block #0
-- [ ] Optional transaction replay protection
+- [x] OP_DRIVECHAIN
+- [x] OP_RETURN unlimited
+- [x] Difficulty reset at block #0
+- [x] Optional transaction replay protection
 - [ ] Block size decreased
 - [ ] SHAD
 
