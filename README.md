@@ -28,3 +28,12 @@ cmake --build build -j $(nproc)
 // Unix-like: ~/.drivechain-forknet
 ```
 Config file name: ```drivechain-forknet.conf```
+
+
+# Forknet changes:
+- [ ] OP_DRIVECHAIN
+- [ ] OP_RETURN unlimited
+- [ ] Difficulty reset at block #0
+- [ ] Optional transaction replay protection
+- [ ] Block size decreased
+- [ ] SHAD
