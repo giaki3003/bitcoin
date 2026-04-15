@@ -37,3 +37,10 @@ Config file name: ```drivechain-forknet.conf```
 - [ ] Optional transaction replay protection
 - [ ] Block size decreased
 - [ ] SHAD
+
+
+# TODO
+- [ ] Update MAX_PACKAGE_WEIGHT policy to allow very large OP_RETURN outputs in a transaction?
+- [ ] Increase MAX_STANDARD_TX_WEIGHT to the block size limit to allow full block size transactions?
+- [ ] Verify no usage of OP_NOP10 in historic blocks or updated script interpreter code
+
