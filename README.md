@@ -19,3 +19,12 @@ Build:
 cmake -B build -DBUILD_GUI=OFF -DBUILD_BENCH=OFF -DBUILD_FUZZ_BINARY=OFF -DBUILD_GUI_TESTS=OFF -DBUILD_TESTS=OFF -DENABLE_IPC=OFF -DWITH_ZMQ=ON -DBUILD_UTIL=ON
 cmake --build build -j $(nproc)
 ```
+
+
+## Data directories & config files:
+```
+// Windows: C:\Users\Username\AppData\Local\drivechain-forknet
+// macOS: ~/Library/Application Support/drivechain-forknet
+// Unix-like: ~/.drivechain-forknet
+```
+Config file name: ```drivechain-forknet.conf```
