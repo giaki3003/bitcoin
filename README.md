@@ -12,7 +12,7 @@ Setup and testing instructions for Forknet
 
 ## drivechain-forknet build instructions (example uses ubuntu LTS (24.04)) 
 Install build dependencies: 
-```git cmake build-essential lisqlite3-dev libboost-all-dev libzmq3-dev pkgconf```
+```git cmake build-essential libsqlite3-dev libboost-all-dev libzmq3-dev pkgconf```
 
 Build:
 ```
