@@ -764,9 +764,14 @@ static RPCHelpMan getblocktemplate()
 
     if (!miner.isTestChain()) {
         const CConnman& connman = EnsureConnman(node);
-        if (connman.GetNodeCount(ConnectionDirection::Both) == 0) {
-            throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, CLIENT_NAME " is not connected!");
-        }
+        // TODO re enable later
+        //
+        // Disable this check for forknet testing
+        //
+        //
+        //if (connman.GetNodeCount(ConnectionDirection::Both) == 0) {
+        //    throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, CLIENT_NAME " is not connected!");
+        //}
 
         if (miner.isInitialBlockDownload()) {
             throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, CLIENT_NAME " is in initial sync and waiting for blocks...");
