@@ -43,4 +43,4 @@ Config file name: ```drivechain-forknet.conf```
 - [ ] Update MAX_PACKAGE_WEIGHT policy to allow very large OP_RETURN outputs in a transaction?
 - [ ] Increase MAX_STANDARD_TX_WEIGHT to the block size limit to allow full block size transactions?
 - [ ] Verify no usage of OP_NOP10 in historic blocks or updated script interpreter code
-
+- [ ] re-enable GBT peer check https://github.com/drivechain-forknet/drivechain-forknet/commit/daaff800eb02fe7c12312119b237cf189bbcc82c
