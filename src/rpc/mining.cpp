@@ -762,21 +762,22 @@ static RPCHelpMan getblocktemplate()
     if (strMode != "template")
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
+    /*
+     * TODO Re-enable
+     *
+     * Disable these checks for forknet testing
+     *
     if (!miner.isTestChain()) {
         const CConnman& connman = EnsureConnman(node);
-        // TODO re enable later
-        //
-        // Disable this check for forknet testing
-        //
-        //
-        //if (connman.GetNodeCount(ConnectionDirection::Both) == 0) {
-        //    throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, CLIENT_NAME " is not connected!");
-        //}
+        if (connman.GetNodeCount(ConnectionDirection::Both) == 0) {
+            throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, CLIENT_NAME " is not connected!");
+        }
 
         if (miner.isInitialBlockDownload()) {
             throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, CLIENT_NAME " is in initial sync and waiting for blocks...");
         }
     }
+    */
 
     static unsigned int nTransactionsUpdatedLast;
     const CTxMemPool& mempool = EnsureMemPool(node);
