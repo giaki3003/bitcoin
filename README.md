@@ -30,6 +30,13 @@ cmake --build build -j $(nproc)
 Config file name: ```drivechain-forknet.conf```
 
 
+## Ports
+Ports are the same as bitcoin core
+```
+network 8333
+rpc server 8332
+```
+
 # Forknet changes:
 - [x] OP_DRIVECHAIN
 - [x] OP_RETURN unlimited
